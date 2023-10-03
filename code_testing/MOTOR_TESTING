@@ -1,0 +1,61 @@
+// Define motor control pins
+LEFT MOTOR
+const int motorInput1Pin = PB9;  // IN2
+const int motorInput2Pin = PA3;  // IN1
+
+void setup() {
+  pinMode(motorInput1Pin, OUTPUT);
+  pinMode(motorInput2Pin, OUTPUT);
+}
+
+void loop() {
+  // Full speed forward
+  digitalWrite(motorInput1Pin, HIGH);
+  digitalWrite(motorInput2Pin, LOW);
+
+  delay(3000);
+
+  // Full speed backward
+  digitalWrite(motorInput1Pin, LOW);
+  digitalWrite(motorInput2Pin, HIGH);
+
+  delay(3000);
+
+  // Gradually increase speed from 0% to 100% in forward mode
+  for (int speed = 0; speed <= 255; speed++) {
+    digitalWrite(motorInput1Pin, LOW);
+    analogWrite(motorInput2Pin, speed);
+    delay(20);
+  }
+  delay(3000);
+  
+  // Gradually decrease speed from 100% to 0% in forward mode
+  for (int speed = 255; speed >= 0; speed--) {
+    digitalWrite(motorInput1Pin, LOW);
+    analogWrite(motorInput2Pin, speed);
+    delay(20);
+  }
+  delay(3000);
+
+  for (int speed = 0; speed <= 255; speed++) {
+    digitalWrite(motorInput1Pin, speed);
+    analogWrite(motorInput2Pin, LOW);
+    delay(20);
+  }
+  delay(3000);
+  
+  // Gradually decrease speed from 100% to 0% in forward mode
+  for (int speed = 255; speed >= 0; speed--) {
+    digitalWrite(motorInput1Pin, speed);
+    analogWrite(motorInput2Pin, LOW);
+    delay(20);
+  }
+  delay(3000);
+  
+  
+  // Stop the motor
+  digitalWrite(motorInput1Pin, LOW);
+  digitalWrite(motorInput2Pin, LOW);
+
+  delay(3000);
+}

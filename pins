@@ -1,0 +1,60 @@
+Motors
+
+left
+  stm
+    B1
+    A3
+  Encorder 
+    c1-B14
+    c2-B15
+ 
+
+right
+  Ardino
+    B9
+      b8
+  Encorder 
+    c1-B12
+    c2-B13
+
+
+TOF (SHDN pin each TOF sensor )
+  TOF 1 - B10
+  TOF 2 - A5
+  TOF 3 - A7
+  TOF 4 - A6
+  TOF 5 - B11
+
+Gyros
+  SCL - A0
+  SDA - A1
+
+
+Blutooth
+  B0
+  B1
+
+
+Programm
+ GND
+ A9
+ A10
+ VCC (STM-5V )
+
+left 
+  rathu
+  duburu
+right 
+  kalu 
+  sudu
+
+
+//left  1 - PB1
+//left 2 - PA3
+
+right 1 - PB9
+right 2 - PB8
+
+
+1 - Low , 2 -High -> Forward
+1 - HIGH , 2 -LOW -> Backward
